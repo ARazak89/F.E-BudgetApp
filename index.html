@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Budget-App</title>
+</head>
+
+<body>
+    <div class="container-fluid d-flex mt-5">
+        <!-- Coté gauche -->
+        <div class="container d-block col-4" id="gauche">
+            <div class="container d-flex titre">
+                <h4>EXPENSE TRACKER</h4> &nbsp; &nbsp; &nbsp;&nbsp;
+                <p> <button class="btn" type="button" id="reset-button">Reset value</button></p>
+            </div>
+            <hr>
+            <div class="container total-amount-container">
+                <span>Please enter your budget</span>
+                <p><input type="number" id="total-amount" placeholder="" /></p>
+                <p> <button class="submit" id="total-amount-button">Calculate</button></p>
+            </div>
+            <div class="container user-amount-container">
+                <span>Please enter your expense</span>
+                <p><input type="text" class="product-title" id="product-title" /></p>
+                <span>Please enter expense amount</span>
+                <p><input type="number" id="user-amount" /></p>
+                <p><button class="submit" id="check-amount">Add expense</button></p>
+            </div>
+        </div>
+        <!-- Coté gauche -->
+        <!-- Hassane Abdel-Razak -->
+        <!-- Coté Droit -->
+        <!-- Output -->
+        <div class="container d-flex col-8" id="droite">
+            <div class="container col-8">
+                <div class="container d-flex montant">
+                    <div class="container col-2 budget">
+                        <p>Budget</p>
+                        <p><i class="fa-solid fa-money-bill-1 fa-2xl"></i></p>
+                        <span id="amount">0</span>&nbsp;<span>F</span>
+                    </div>
+                    <div class="container col-2 expenses">
+                        <p>Expenses</p>
+                        <p><i class="fa-solid fa-credit-card fa-2xl"></i></p>
+                        <span id="expenditure-value">0</span>&nbsp;<span>F</span>
+                    </div>
+                    <div class="container col-2 balance">
+                        <p>Balance</p>
+                        <p><i class="fa-solid fa-dollar-sign fa-2xl"></i></p>
+                        <span id="balance-amount">0</span>&nbsp;<span>F</span>
+                    </div>
+                    <!-- Output -->
+                </div>
+                <!-- List -->
+                <div class="container list col-11">
+                    <hr>
+                    <div class="container d-flex liste-depenses">
+                        <div class="container col-5 title">
+                            <span>Expense title</span>
+                        </div>
+                        <div class="container col-5 valeur">
+                            <span>Expense value</span>
+                        </div>
+                        <div class="container col-2 modifier">
+                            <span><i class="fa-solid fa-gear"></i></span>
+                        </div>
+                    </div>
+                    <div class="list-container" id="list"></div>
+                </div>
+                <!-- List -->
+            </div>
+
+            <div class="container col-4">
+
+                <div class="container history" id="historyDiv">
+                    <button class="btn" id="historyButton">History</button>
+                    <div id="expense-history-list" style="display: none;">
+                        <div class="container list col-12">
+                            <div class="container d-flex history">
+                                <div class="container col-2 index">
+                                    <span>#</span>
+                                </div>
+                                <div class="container col-5 title">
+                                    <span>Expense title</span>
+                                </div>
+                                <div class="container col-5 valeur">
+                                    <span>Expense value</span>
+                                </div>
+                            </div>
+                            <div class="list-container" id="list"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <br><br>
+                <div class="container"><canvas id="expenseChart"></canvas></div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Coté Droit -->
+    <!-- Hassane Abdel-Razak -->
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
